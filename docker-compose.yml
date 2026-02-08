@@ -1,0 +1,38 @@
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    restart: always
+    hostname: 'gitlab.example.com' # Your domain/IP
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        # --- Main URL (from before) ---
+        external_url 'http://<ip>'
+
+        # --- SSH Port (from before) ---
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+
+        # --- New Log Rotation Settings ---
+        logging['svlogd_size'] = 209715200  # 200MB
+        logging['svlogd_num'] = 10
+        logging['logrotate_frequency'] = "daily"
+        logging['logrotate_size'] = "200M"
+        logging['logrotate_rotate'] = 7
+
+        # --- New Git LFS Settings ---
+        gitlab_rails['lfs_enabled'] = true
+        gitlab_rails['lfs_max_file_size'] = 5120  # 5GB in MB
+        nginx['client_max_body_size'] = '5g'    # 5GB for Nginx
+    ports:
+      - '80:80'
+      - '443:443'
+      - '2222:22'
+    volumes:
+      - 'gitlab_config:/etc/gitlab'
+      - 'gitlab_logs:/var/log/gitlab'
+      - 'gitlab_data:/var/lib/gitlab'
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:

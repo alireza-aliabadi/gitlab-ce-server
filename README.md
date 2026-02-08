@@ -60,8 +60,8 @@ docker compose version
 ### 1. Clone or Download
 
 ```bash
-git clone <your-repo-url>
-cd gitlab-server
+git clone https://github.com/alireza-aliabadi/gitlab-ce-server.git
+cd gitlab-ce-server
 ```
 
 ### 2. Configure Domain/IP

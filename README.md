@@ -4,16 +4,16 @@ An optimized GitLab Community Edition deployment using Docker Compose with enhan
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-- [Initial Setup](#initial-setup)
-- [Firewall Configuration](#firewall-configuration)
-- [Maintenance](#maintenance)
-- [Troubleshooting](#troubleshooting)
-- [Security Considerations](#security-considerations)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Prerequisites](#-prerequisites)
+- [Quick Start](#-quick-start)
+- [Configuration](#️-configuration)
+- [Initial Setup](#-initial-setup)
+- [Firewall Configuration](#-firewall-configuration)
+- [Maintenance](#️-maintenance)
+- [Troubleshooting](#-troubleshooting)
+- [Security Considerations](#-security-considerations)
 
 ## 🎯 Overview
 
